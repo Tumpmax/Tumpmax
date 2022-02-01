@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %} {% if
+current_user.is_authenticated %} 
+<h1 align="center" class="text-muted">Hi {{ current_user.username }},</h1>
+<h1 align="center" class="text"></h1>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+      <div class="content-section">
+        <h3>Insights</h3>
+        <p class='text-muted'>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-light"><a href="/crypto">Retrieve Crypto Data</a></li>
+          <li class="list-group-item list-group-item-light"><a href="/crypto/results">Show Crypto Data</a></li>
+          <li class="list-group-item list-group-item-light"><a href="/crypto/results/create_graph">Generate Crypto Graph</a></li>
+          <li class="list-group-item list-group-item-light"><a href="/crypto/results/show_graph">Show Crypto Graph</a></li>
+          <li class="list-group-item list-group-item-light"><a href="/crypto/results/email">Email Crypto Data</a></li>
+          <li class="list-group-item list-group-item-light"><a href="/crypto/upload">Upload Crypto Data</a></li>
+          <li class="list-group-item list-group-item-light"><a href="crypto/convert_file">Convert Uploaded File</a></li>
+          <li class="list-group-item list-group-item-light"><a href="/account">Update Account</a></li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+{% endif %} {% endblock content %}

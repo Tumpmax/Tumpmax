@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+ 
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <div class="content-section">
+        {% block content %}
+        <div class="content-section">
+          <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Crypto Ticker Form</legend>
+              <div class="form-group">
+                {{ form.crypto.label(class="form-control-label") }} {% if
+                form.crypto.errors %} {{ form.crypto(class="form-control
+                form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                  {% for error in form.crypto.errors %}
+                  <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+                {% else %} {{ form.crypto(class="form-control form-control-lg")
+                }} {% endif %}
+              </div>
+            </fieldset>
+            <div class="form-group">
+              {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+      </div>
+    </div>
+  </div>
+</main>
+    {% endblock content %}
+
